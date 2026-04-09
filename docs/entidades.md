@@ -60,7 +60,6 @@ Representa uma área de conhecimento (ex: Backend, Frontend, Dados).
 
 * **id** → Identificador único da área
 * **nome** → Nome da área
-* **descricao** → Descrição da área
 * **dataCriacao** → Data de criação do registro no sistema
 
 ---
@@ -71,7 +70,6 @@ Define o formato do conteúdo (ex: artigo, vídeo, curso).
 
 * **id** → Identificador único da categoria
 * **nome** → Nome da categoria
-* **descricao** → Descrição da categoria
 * **dataCriacao** → Data de criação do registro no sistema
 
 ---
@@ -106,7 +104,7 @@ Representa uma trilha de aprendizado composta por conteúdos.
 * **nivel** → Nível do roadmap (INICIANTE, INTERMEDIARIO, AVANCADO)
 * **dataCriacao** → Data de criação do roadmap
 
-#### Relacionamentos
+#### Relações com Conteúdos
 
 * Um roadmap é composto por vários **conteúdos**
 * Um conteúdo pode estar presente em múltiplos roadmaps

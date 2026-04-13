@@ -84,44 +84,107 @@ src/
 
 ## Como executar
 
-<!-- Deve funcionar para qualquer dev -->
+### Pré-requisitos
 
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/seu-projeto.git
+Antes de rodar o projeto, você precisa ter instalado:
 
-# Acesse a pasta
-cd seu-projeto
-
-# Subir dependências (ex: banco com Docker)
-docker-compose up -d
-
-# Rodar aplicação
-./mvnw spring-boot:run
-```
-
-<!-- 👉 Ajuste conforme Gradle, Maven, etc -->
+* **Java 17**
+* **Docker + Docker Compose**
+* Uma IDE (IntelliJ IDEA, VS Code, etc)
 
 ---
 
-## Variáveis de ambiente
+### Variáveis de ambiente
 
-<!-- Liste TODAS necessárias -->
+Este projeto utiliza variáveis de ambiente para configuração.
 
-✔ Exemplo:
+Crie um arquivo `.env` na raiz do projeto:
 
 ```env
-DB_URL=jdbc:postgresql://localhost:5432/db
-DB_USER=postgres
-DB_PASSWORD=postgres
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
 
-JWT_PUBLIC_KEY=...
-JWT_PRIVATE_KEY=...
+SPRING_DATASOURCE_URL=
+SPRING_DATASOURCE_USERNAME=
+SPRING_DATASOURCE_PASSWORD=
 ```
 
-Para cada variável:
+⚠️ **Importante:**
 
-* Explique o que representa
+> O arquivo `.env` **não deve ser versionado** (já está no `.gitignore`)
+
+> **Nunca subir dados sensíveis** como senha, tokens ou chaves
+
+---
+
+### Configurando na IDE (IntelliJ)
+
+Se estiver usando o IntelliJ:
+
+1. Vá em **More Actions > Edit**
+2. Em **Environment Variables**
+3. Aponte para o arquivo `.env`
+
+Isso garante que o projeto consiga ler as variáveis corretamente.
+
+---
+
+### Subindo o banco de dados
+
+```bash
+docker-compose up -d
+```
+
+* O projeto utiliza **PostgreSQL (Alpine)** para ser mais leve
+* Caso já tenha PostgreSQL instalado, pode usar sua instância local
+
+---
+
+### Rodando a aplicação
+
+#### Opção 1 — Pela IDE (recomendado)
+
+A forma mais simples:
+
+* Clique em **Run** na sua IDE
+
+---
+
+#### Opção 2 — Via terminal (Gradle)
+
+Se for rodar via terminal, pode ser necessário passar as variáveis:
+
+```bash
+./gradlew bootRun
+
+# Build do projeto
+./gradlew build
+
+# Rodar testes
+./gradlew test
+
+# Limpar build
+./gradlew clean
+```
+
+Caso dê erro com variáveis de ambiente, prefira rodar pela IDE.
+
+---
+
+### Acessando a API
+
+Após subir a aplicação, acesse:
+
+🟣 [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+
+---
+
+## Boas práticas
+
+* Não versionar `.env`
+* Não expor credenciais no código
+* Sempre validar se as variáveis de ambiente estão configuradas antes de rodar
 
 ---
 

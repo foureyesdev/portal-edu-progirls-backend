@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: portal
+  profiles:
+    active: dev
+
+server:
+  error:
+    include-stacktrace: never

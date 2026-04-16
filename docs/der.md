@@ -22,6 +22,7 @@ O sistema foi modelado para suportar uma estrutura flexível de conteúdos educa
 
 > **Resolução de Muitos-para-Muitos ($N:M$):**
 > As tabelas `RoadmapConteudo`, `ConteudoTecnologia` e `ConteudoTag` funcionam como **entidades associativas**. Elas foram criadas para resolver as relações de muitos-para-muitos entre as entidades principais, garantindo a escalabilidade do MVP conforme definido na **[US1]**.
+>
 > **Entidades Independentes:**
 > As entidades `ReferenciaExterna` e `MembroEquipe` operam de forma independente, sem chaves estrangeiras vinculadas às outras tabelas de conteúdo.
 

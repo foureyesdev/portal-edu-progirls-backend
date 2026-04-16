@@ -66,9 +66,10 @@ src/
              │   ├── entity/             # representação das entidades persistidas no banco de dados
              │   └── dto/                # objetos de transferência de dados entre as camadas e com o cliente
              │       └── area/           # DTOs específicos do domínio de Área
+             │       └── categoria/      # DTOs específicos do domínio de Categoria
              ├── mapper/                 # responsável por converter entre entidades e DTOs
              └── exception/              # tratamento de exceções e padronização das respostas de erro da API
-        └── resources/
+         └── resources/
             ├── application.yml          # configurações padrão da aplicação
             ├── application-dev.yml      # configurações específicas para ambiente de desenvolvimento
             └── application-test.yml     # configurações específicas para testes automatizados
@@ -78,9 +79,10 @@ src/
 
 ## Endpoints
 
-| Método | Endpoint    | Descrição    |
-| ------ | ----------- |--------------|
-| GET    | /api/v1/areas    | Listar áreas |
+| Método | Endpoint           | Descrição         |
+| ------ |--------------------|-------------------|
+| GET    | /api/v1/areas      | Listar áreas      |
+| GET    | /api/v1/categorias | Listar categorias |
 
 ---
 

@@ -2,12 +2,10 @@ package br.com.progirls.api.portal.service;
 
 import br.com.progirls.api.portal.mapper.CategoriaMapper;
 import br.com.progirls.api.portal.model.dto.categoria.CategoriaResponseDTO;
-import br.com.progirls.api.portal.model.entity.Categoria;
 import br.com.progirls.api.portal.repository.CategoriaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service

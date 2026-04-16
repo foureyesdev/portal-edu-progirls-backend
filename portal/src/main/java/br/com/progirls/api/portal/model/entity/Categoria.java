@@ -13,6 +13,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Categoria extends EntidadeBase {
-    @Column(length = 50, nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String nome;
 }
